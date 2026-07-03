@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="(주)딥큐브" />
+  <meta name="dcterms.date" content="2026-06-22" />
+  <title>DeepCube.AI 상세기능설명서</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="pdf-style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DeepCube.AI 상세기능설명서</h1>
+<p class="subtitle">PoC 검토용 — 교보디티에스(주) · 교보그룹·관계사</p>
+<p class="author">(주)딥큐브</p>
+<p class="date">2026-06-22</p>
+</header>
+<h1 id="deepcube.ai-상세기능설명서">DeepCube.AI 상세기능설명서</h1>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문서명</td>
+<td>DeepCube.AI 상세기능설명서 (PoC 검토용)</td>
+</tr>
+<tr>
+<td>버전</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>작성일</td>
+<td>2026년 6월 22일</td>
+</tr>
+<tr>
+<td>작성</td>
+<td>(주)딥큐브</td>
+</tr>
+<tr>
+<td>수신</td>
+<td>교보디티에스(주) 및 교보그룹·관계사</td>
+</tr>
+<tr>
+<td>목적</td>
+<td>실제 시스템 세부 기능 분석을 통한 PoC 가능 여부 검토</td>
+</tr>
+<tr>
+<td>연관 문서</td>
+<td>DeepCube.AI 제품소개서 v1.0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="문서-목적범위">1. 문서 목적·범위</h2>
+<h3 id="목적">1.1 목적</h3>
+<p>본 문서는 교보디티에스(주) 및 교보그룹·관계사가 <strong>DeepCube.AI가
+실제로 제공하는 기능</strong>을 기능 단위로 파악하고,
+<strong>PoC(개념검증) 범위·기술 적합성·선행 조건</strong>을 판단할 수
+있도록 작성되었습니다.</p>
+<h3 id="범위">1.2 범위</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>구분</th>
+<th>포함</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표준 설치 모듈</td>
+<td>dc-admin, dc-editor, dc-editor-api, dc-flow, dc-log</td>
+<td>PoC 기본 범위</td>
+</tr>
+<tr>
+<td>선택 모듈</td>
+<td>dc-rag-api, dc-rag-front (RAG Builder)</td>
+<td>표준 매니페스트 <strong>보류</strong> — 별도 협의</td>
+</tr>
+<tr>
+<td>로드맵 항목</td>
+<td>PostgreSQL 전환, 인증 고도화</td>
+<td>현황·리스크로 명시</td>
+</tr>
+</tbody>
+</table>
+<h3 id="기능-표기-규칙">1.3 기능 표기 규칙</h3>
+<table>
+<thead>
+<tr>
+<th>열</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기능 ID</td>
+<td>대분류-순번 (예: A-01)</td>
+</tr>
+<tr>
+<td>기능명</td>
+<td>사용자·연동 관점 기능 이름</td>
+</tr>
+<tr>
+<td>설명</td>
+<td>시스템 동작 요약</td>
+</tr>
+<tr>
+<td>입출력·API</td>
+<td>주요 API·데이터</td>
+</tr>
+<tr>
+<td>PoC 검토 포인트</td>
+<td>PoC 시 확인할 사항</td>
+</tr>
+<tr>
+<td>비고</td>
+<td>표준/옵션/보류</td>
+</tr>
+</tbody>
+</table>
+<p><strong>범례</strong>: <code>표준</code> = 표준 설치 포함 |
+<code>옵션</code> = 구성·협의에 따라 | <code>보류</code> = 표준 패키지
+미포함</p>
+<hr />
+<h2 id="a.-인증권한-dc-admin">2. A. 인증·권한 (dc-admin)</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-01</td>
+<td>사용자 로그인</td>
+<td>ID/비밀번호 기반 UI 세션 발급</td>
+<td><code>POST /ui-api/user/login</code> → access JWT + refresh
+쿠키</td>
+<td>SSO/LDAP 연동 필요 여부</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-02</td>
+<td>토큰 갱신</td>
+<td>HttpOnly refresh 쿠키로 access JWT 재발급</td>
+<td><code>POST /ui-api/auth/refresh</code></td>
+<td>세션 유지 정책·쿠키 Path</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-03</td>
+<td>로그아웃</td>
+<td>refresh 폐기·쿠키 만료</td>
+<td><code>POST /ui-api/auth/logout</code></td>
+<td>동시 세션·강제 로그아웃 요구</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-04</td>
+<td>연동 토큰 발급</td>
+<td>API Key로 서버-서버 JWT 교환</td>
+<td><code>POST /ui-api/auth/token</code>, 헤더
+<code>x-navi-key</code></td>
+<td>B2B 연동 시 API Key 발급·보관</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-05</td>
+<td>토큰 검증</td>
+<td>nginx auth_request·경량 검증</td>
+<td><code>GET /ui-api/auth/verify</code></td>
+<td>엣지 인증·iframe(director) 쿠키 폴백</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-06</td>
+<td>사용자 정보·권한 조회</td>
+<td>프로필·grants 조회</td>
+<td><code>GET /ui-api/user/info</code>, <code>/user/grants</code></td>
+<td>메뉴·기능 노출 정책</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-07</td>
+<td>RBAC — 사용자·그룹</td>
+<td>사용자·그룹 CRUD, 멤버십</td>
+<td><code>/ui-api/admin/user/*</code>, <code>/admin/group/*</code></td>
+<td>조직 구조 반영 가능성</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-08</td>
+<td>RBAC — 메뉴·기능 Grant</td>
+<td>메뉴·기능 단위 권한 부여</td>
+<td><code>/ui-api/admin/menu/*</code>, <code>/admin/func/*</code></td>
+<td>최소 권한 원칙 적용</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-09</td>
+<td>RBAC — 시나리오·카테고리 Grant</td>
+<td>시나리오·카테고리 접근 제어</td>
+<td><code>/ui-api/admin/scenario/*</code>,
+<code>/admin/category/*</code></td>
+<td>부서별 시나리오 분리</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-10</td>
+<td>권한 변경 동기화</td>
+<td>permission epoch로 클라이언트 갱신</td>
+<td>JWT payload <code>ver</code>, Redis
+<code>auth:epoch:{userId}</code></td>
+<td>즉시 무효화 vs refresh 시 반영</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-11</td>
+<td>라이선스 관리</td>
+<td>라이선스 검증·설정</td>
+<td><code>/ui-api/license/*</code></td>
+<td>상용 배포 시 라이선스 정책</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>A-12</td>
+<td>nginx auth_request 연동</td>
+<td>보호 경로 1차 차단</td>
+<td><code>/_auth</code> → <code>/ui-api/auth/verify</code></td>
+<td>고객 nginx·WAF와 연계</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<p><strong>토큰 수명 (권장)</strong></p>
+<table>
+<thead>
+<tr>
+<th>토큰</th>
+<th>권장 수명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access JWT (UI)</td>
+<td>5~15분</td>
+</tr>
+<tr>
+<td>Refresh</td>
+<td>7~30일 (회전)</td>
+</tr>
+<tr>
+<td>Integration JWT</td>
+<td>5~30분 (배포 설정에 따름)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="b.-시나리오-관리-dc-admin">3. B. 시나리오 관리 (dc-admin)</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B-01</td>
+<td>시나리오 카테고리</td>
+<td>폴더형 카테고리로 시나리오 분류</td>
+<td>Admin UI, <code>/ui-api/admin/category/*</code></td>
+<td>조직·업무별 분류 체계</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-02</td>
+<td>시나리오 목록(카테고리)</td>
+<td>카테고리 선택 후 시나리오 조회</td>
+<td>UI: 시나리오 메뉴</td>
+<td>사용자별 노출 범위</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-03</td>
+<td>내 시나리오</td>
+<td>권한 있는 전체 시나리오 목록</td>
+<td>UI + API</td>
+<td>PoC 대상 시나리오 지정</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-04</td>
+<td>즐겨찾기</td>
+<td>자주 쓰는 시나리오 북마크</td>
+<td>UI</td>
+<td>—</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-05</td>
+<td>공유 시나리오</td>
+<td>타 사용자 공유 시나리오 조회</td>
+<td>UI</td>
+<td>협업·템플릿 공유</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-06</td>
+<td>시나리오 실행(UI)</td>
+<td>프롬프트 입력 후 실행·결과 표시</td>
+<td>UI → dc-flow 프록시</td>
+<td>UX·응답 시간 SLA</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-07</td>
+<td>beta/prod 배포</td>
+<td>시나리오 환경별 배포 상태 관리</td>
+<td><code>scenario_env</code>: beta | prod, DB 테이블 분기</td>
+<td>PoC=beta, 운영=prod 정책</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-08</td>
+<td>시나리오 편집 진입</td>
+<td>iframe으로 director 에디터 연동</td>
+<td><code>EditScenarioView</code> → POST
+<code>/director/canvas</code></td>
+<td>편집 권한·감사</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>B-09</td>
+<td>연동 시나리오 목록 API</td>
+<td>B2B 클라이언트용 목록</td>
+<td><code>GET /ui-api/scenario/my/list?inUse=1</code></td>
+<td>연동 대상 시나리오 ID 확정</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c.-시나리오-설계-dc-editor-dc-editor-api">4. C. 시나리오 설계
+(dc-editor + dc-editor-api)</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C-01</td>
+<td>시각적 캔버스</td>
+<td>ReactFlow 기반 노드·엣지 편집</td>
+<td><code>/director/</code>, <code>/director/canvas</code></td>
+<td>설계자 UX·교육 필요도</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>C-02</td>
+<td>노드 풀</td>
+<td>사용 가능 노드 타입·설정 메타</td>
+<td><code>GET /get_design_init_info</code></td>
+<td>PoC에 필요 노드 포함 여부</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>C-03</td>
+<td>시나리오 CRUD</td>
+<td>생성·조회·수정·삭제</td>
+<td><code>/insert_scenario</code>, <code>/update_scenario/:id</code>,
+<code>/get_scenario/:id</code></td>
+<td>버전·백업 정책</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>C-04</td>
+<td>시나리오 목록(에디터)</td>
+<td>설계자용 전체 목록</td>
+<td><code>GET /get_all_scenario_list</code></td>
+<td>—</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>C-05</td>
+<td>노드 메타 시드·리로드</td>
+<td>AllNode.json → DB 동기화</td>
+<td><code>POST /init_nodes</code>, <code>GET /reload_nodes</code></td>
+<td>커스텀 노드 확장</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>C-06</td>
+<td>MCP 에이전트 목록</td>
+<td>등록된 MCP 에이전트·도구 조회</td>
+<td><code>GET /get_mcp_agent_list</code>,
+<code>POST /get_mcp_agent_tools</code></td>
+<td>PoC MCP 서버 준비</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>C-07</td>
+<td>단일 노드 테스트 실행</td>
+<td>에디터에서 노드 단위 실행</td>
+<td>dc-flow <code>POST /query</code> (query_type=prompt), SSE</td>
+<td>디버깅·검증</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>C-08</td>
+<td>Admin-Director 연동</td>
+<td>scenario_id, user_seq, editable 등 POST 주입</td>
+<td>iframe POST body</td>
+<td>SSO·세션 전달</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<p><strong>시나리오 JSON 구조 (개념)</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;prompt_chain&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;start&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;node_id&gt;&quot;</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;end&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;node_id&gt;&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;links&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;&lt;node_id&gt;&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;llm | rag | websearch | mcp | ...&quot;</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;next&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;next_node_id&gt;&quot;</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;prompt&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;model&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<hr />
+<h2 id="d.-워크플로-실행-dc-flow">5. D. 워크플로 실행 (dc-flow)</h2>
+<h3 id="노드-타입">5.1 노드 타입</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 10%" />
+<col style="width: 18%" />
+<col style="width: 28%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>노드 타입</th>
+<th>설명</th>
+<th>실행 방식</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-01</td>
+<td><code>start</code></td>
+<td>시나리오 시작·입력 수신</td>
+<td>인라인</td>
+<td>입력 파라미터 설계</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-02</td>
+<td><code>end</code></td>
+<td>시나리오 종료·결과 반환</td>
+<td>인라인</td>
+<td>출력 형식</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-03</td>
+<td><code>llm</code></td>
+<td>LLM 호출·프롬프트 체인</td>
+<td>Celery <code>llm_task</code></td>
+<td>모델·API 키·비용</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-04</td>
+<td><code>rag</code></td>
+<td>벡터 DB 검색 후 컨텍스트 제공</td>
+<td>Celery <code>rag_task</code></td>
+<td>Chroma·컬렉션 준비</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-05</td>
+<td><code>websearch</code></td>
+<td>웹 검색 API 연동</td>
+<td>Celery <code>websearch_task</code></td>
+<td>검색 프로바이더·망 연결</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-06</td>
+<td><code>textinput</code></td>
+<td>문자열 템플릿·파라미터 치환</td>
+<td>인라인</td>
+<td>—</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-07</td>
+<td><code>scenario</code></td>
+<td>서브시나리오 호출</td>
+<td>자식 Flow 스레드</td>
+<td>모듈화·재사용</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-08</td>
+<td><code>runtime_scenario</code></td>
+<td>동적 복제·런타임 시나리오</td>
+<td>Flow 내부 처리</td>
+<td>고급 패턴</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-09</td>
+<td><code>mcp_agent</code></td>
+<td>MCP 에이전트(Celery)</td>
+<td>Celery <code>mcp_agent_task</code></td>
+<td>DB·도구 연동 PoC 핵심</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-10</td>
+<td><code>mcp</code></td>
+<td>MCP 직접 호출</td>
+<td>인라인</td>
+<td>알려진 이슈(TD-01,02) 확인</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<p><strong>에디터 노드 화이트리스트</strong>: <code>start</code>,
+<code>end</code>, <code>llm</code>, <code>chatgpt</code>,
+<code>llm_google</code>, <code>alibaba</code>, <code>rag</code>,
+<code>scenario</code>, <code>websearch</code>, <code>textinput</code>,
+<code>mcp_agent</code>, <code>mcp</code></p>
+<h3 id="실행api">5.2 실행·API</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-11</td>
+<td>시나리오 비동기 실행</td>
+<td>전체 시나리오 실행·task_id 반환</td>
+<td><code>POST /flow/query</code> (202), query_type=scenario</td>
+<td>타임아웃·재시도</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-12</td>
+<td>단일 노드 실행</td>
+<td>노드 단위 테스트</td>
+<td><code>POST /flow/query</code>, query_type=prompt</td>
+<td>—</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-13</td>
+<td>동기 단순 쿼리</td>
+<td>60초 이내 동기 응답</td>
+<td><code>POST /flow/simple_query</code></td>
+<td>시나리오 미지원</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-14</td>
+<td>SSE 결과 스트리밍</td>
+<td>노드별 진행·최종 결과 스트림</td>
+<td><code>GET /flow/stream/{task_id}</code></td>
+<td>클라이언트 SSE 구현</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-15</td>
+<td>헬스체크</td>
+<td>DB·Redis 연결 상태</td>
+<td><code>GET /flow/health</code></td>
+<td>모니터링 연동</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-16</td>
+<td>Celery 워커 큐</td>
+<td>llm/rag/websearch/mcp_agent/default</td>
+<td>PM2 worker 5종</td>
+<td>워커 스케일·리소스</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>D-17</td>
+<td>실행 로그</td>
+<td>노드별 실행 이력</td>
+<td>DB <code>node_execution_log</code></td>
+<td>감사·디버깅</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SSE 최종 결과 규칙 (B2B 연동)</strong></p>
+<ul>
+<li>스트림에서 공백 줄 제외 <strong>마지막에서 두 번째</strong>
+<code>data:</code> 줄 = 최종 결과</li>
+<li>마지막 줄 = <code>data: {"result": "Task Complete"}</code></li>
+</ul>
+<hr />
+<h2 id="e.-llmrag웹검색">6. E. LLM·RAG·웹검색</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-01</td>
+<td>LLM 모델 등록</td>
+<td>프로바이더·모델·파라미터 관리</td>
+<td>Admin <code>/ui-api/admin/llm/*</code>, DB
+<code>llm_models</code></td>
+<td>사용 모델·API 키·폐쇄망</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>E-02</td>
+<td>다중 프로바이더</td>
+<td>OpenAI, Anthropic, Groq, Upstage, Ollama, Google 등</td>
+<td>dc-flow task_handlers</td>
+<td>프로바이더별 승인·계약</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>E-03</td>
+<td>RAG 노드(실행)</td>
+<td>Chroma 벡터 DB 검색</td>
+<td>MySQL <code>rag_info</code>, <code>vectordb_path</code></td>
+<td>인덱스·컬렉션 준비</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>E-04</td>
+<td>웹검색 노드</td>
+<td>Naver 등 검색 API</td>
+<td>websearch_task</td>
+<td>외부망·API 키</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>E-05</td>
+<td>임베딩·벡터 경로</td>
+<td>flow 전용 Chroma 디렉터리</td>
+<td>env <code>vectordb_path</code></td>
+<td>스토리지·백업</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="f.-mcp-연동">7. F. MCP 연동</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F-01</td>
+<td>MCP 서버 등록</td>
+<td>SSE MCP 서버 URL·메타</td>
+<td>Admin, DB <code>mcp_server_registries</code></td>
+<td>대상 DB·도구 MCP 서버 구축</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>F-02</td>
+<td>MCP 에이전트 노드</td>
+<td>Celery 기반 MCP 에이전트 실행</td>
+<td><code>mcp_agent</code> 노드</td>
+<td>PoC 핵심 — DB 직결 검증</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>F-03</td>
+<td>MCP 노드(인라인)</td>
+<td>동기 MCP 호출</td>
+<td><code>mcp</code> 노드</td>
+<td>TD-01,02 리스크</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>F-04</td>
+<td>MCP 도구 목록 캐시</td>
+<td>editor-api <code>mcpagentToolsPool</code></td>
+<td>기동 시·요청 시 갱신</td>
+<td>도구 변경 반영</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<p><strong>「탈 RAG」 기술적 근거</strong>: MCP를 통해 구조화
+데이터·업무 API에 직접 접근하면, 문서 벡터화 없이도 에이전트형
+Q&amp;A·업무 처리가 가능합니다. RAG 노드는 보조 수단으로 병행 구성할 수
+있습니다.</p>
+<hr />
+<h2 id="g.-rag-builder-선택-표준-설치-보류">8. G. RAG Builder (선택 —
+표준 설치 보류)</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G-01</td>
+<td>문서 변환</td>
+<td>PDF, DOCX, PPT, HWP, TXT → Markdown</td>
+<td>dc-rag-api converter</td>
+<td>PoC에 문서 RAG 필요 시</td>
+<td><strong>보류</strong></td>
+</tr>
+<tr>
+<td>G-02</td>
+<td>문서 분할·벡터화</td>
+<td>Splitter + Embedding + Vector DB</td>
+<td><code>/api/v1/vectorize/*</code></td>
+<td>Chroma/Milvus/Qdrant</td>
+<td><strong>보류</strong></td>
+</tr>
+<tr>
+<td>G-03</td>
+<td>컬렉션 관리</td>
+<td>컬렉션 CRUD·메타</td>
+<td><code>/api/v1/collection/*</code></td>
+<td>—</td>
+<td><strong>보류</strong></td>
+</tr>
+<tr>
+<td>G-04</td>
+<td>스케줄 인덱싱</td>
+<td>crontab/watchdog 기반 재인덱싱</td>
+<td><code>/api/v1/schedule/*</code></td>
+<td>운영 자동화</td>
+<td><strong>보류</strong></td>
+</tr>
+<tr>
+<td>G-05</td>
+<td>RAG Manager UI</td>
+<td>대시보드·검색·설정</td>
+<td><code>/rag-manager/</code></td>
+<td>별도 설치·포트</td>
+<td><strong>보류</strong></td>
+</tr>
+<tr>
+<td>G-06</td>
+<td>deepcube_integration</td>
+<td>RAG Builder → navi DB 메타 동기화</td>
+<td>settings.xml 플래그</td>
+<td>flow RAG 노드와 정합</td>
+<td><strong>보류</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>주의</strong>: dc-rag-api와 dc-flow RAG 노드는 <strong>별도
+벡터 스택</strong>(TD-04). PoC에서 문서 RAG가 필요하면 범위·데이터
+정합을 별도 협의합니다.</p>
+</blockquote>
+<hr />
+<h2 id="h.-통합-로그-dc-log">9. H. 통합 로그 (dc-log)</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>입출력·API</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H-01</td>
+<td>로그 배치 수집</td>
+<td>앱 → dc-log 단일 ingest</td>
+<td><code>POST /v1/logs:batch</code> (202)</td>
+<td>전 앱 SDK 연동</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>H-02</td>
+<td>로그 단건 수집</td>
+<td>단일 이벤트 ingest</td>
+<td><code>POST /v1/logs</code></td>
+<td>—</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>H-03</td>
+<td>Snowflake log_id</td>
+<td>서버 부여 64-bit ID</td>
+<td>JSON string 직렬화</td>
+<td>추적·상관관계</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>H-04</td>
+<td>audit 라우팅</td>
+<td>log_type=audit → PostgreSQL</td>
+<td>schema <code>log</code>, user <code>app_log</code></td>
+<td>금융권 감사 요구</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>H-05</td>
+<td>non-audit 저장</td>
+<td>파일 저장소·순환·백업</td>
+<td>NDJSON 파일</td>
+<td>보관 기간·용량</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>H-06</td>
+<td>앱별 debug on/off</td>
+<td>런타임 로그 레벨 제어</td>
+<td><code>GET/PUT /v1/config/apps/{app}</code></td>
+<td>운영 중 디버깅</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>H-07</td>
+<td>로그 Admin UI</td>
+<td>조회·관리 SPA</td>
+<td><code>/log-admin/</code></td>
+<td>감사 담당자 접근</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>H-08</td>
+<td>앱 DB log 접근 금지</td>
+<td>audit는 ingest API만</td>
+<td>정책: app_log 전용</td>
+<td>보안·분리</td>
+<td>표준</td>
+</tr>
+</tbody>
+</table>
+<p><strong>로그 envelope 필수 필드</strong>: <code>log_id</code>,
+<code>timestamp</code>, <code>app</code>, <code>log_type</code>,
+<code>level</code>, <code>message</code></p>
+<hr />
+<h2 id="i.-외부-연동-api-b2b">10. I. 외부 연동 API (B2B)</h2>
+<h3 id="표준-연동-시퀀스">10.1 표준 연동 시퀀스</h3>
+<pre><code>[외부 시스템]
+    │
+    ├─(1) POST /ui-api/auth/token  (x-navi-key)
+    │       └─ JWT access token
+    │
+    ├─(2) GET /ui-api/scenario/my/list  (Bearer)
+    │       └─ scenarioId 목록
+    │
+    ├─(3) POST /flow/query  (Bearer, scenario_id, question)
+    │       └─ 202, query_task_id
+    │
+    └─(4) GET /flow/stream/{query_task_id}  (SSE)
+            └─ 단계별 data + 최종 결과</code></pre>
+<h3 id="주요-api-엔드포인트">10.2 주요 API 엔드포인트</h3>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 25%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr>
+<th>구분</th>
+<th>Method</th>
+<th>Path</th>
+<th>인증</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인증</td>
+<td>POST</td>
+<td><code>/ui-api/auth/token</code></td>
+<td><code>x-navi-key</code></td>
+<td>연동 JWT 발급</td>
+</tr>
+<tr>
+<td>인증</td>
+<td>GET</td>
+<td><code>/ui-api/auth/verify</code></td>
+<td>Bearer (선택)</td>
+<td>토큰 검증</td>
+</tr>
+<tr>
+<td>시나리오</td>
+<td>GET</td>
+<td><code>/ui-api/scenario/my/list</code></td>
+<td>Bearer</td>
+<td>내 시나리오 목록</td>
+</tr>
+<tr>
+<td>실행</td>
+<td>POST</td>
+<td><code>/flow/query</code></td>
+<td>Bearer (nginx)</td>
+<td>비동기 실행</td>
+</tr>
+<tr>
+<td>실행</td>
+<td>GET</td>
+<td><code>/flow/stream/{task_id}</code></td>
+<td>Bearer (nginx)</td>
+<td>SSE 스트리밍</td>
+</tr>
+<tr>
+<td>헬스</td>
+<td>GET</td>
+<td><code>/ui-api/health</code></td>
+<td>Bearer</td>
+<td>UI backend 상태</td>
+</tr>
+<tr>
+<td>헬스</td>
+<td>GET</td>
+<td><code>/flow/health</code></td>
+<td>Bearer</td>
+<td>Flow 엔진 상태</td>
+</tr>
+</tbody>
+</table>
+<h3 id="연동-기능-표">10.3 연동 기능 표</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 17%" />
+<col style="width: 13%" />
+<col style="width: 36%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr>
+<th>기능 ID</th>
+<th>기능명</th>
+<th>설명</th>
+<th>PoC 검토 포인트</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I-01</td>
+<td>API Key 발급·관리</td>
+<td>고객별 연동 키</td>
+<td>키 보관·회전·폐기</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>I-02</td>
+<td>JWT Bearer 호출</td>
+<td>업무 API 공통 헤더</td>
+<td>토큰 만료·재발급 주기</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>I-03</td>
+<td>시나리오 원격 실행</td>
+<td>외부 앱에서 AI 시나리오 호출</td>
+<td>latency·동시성</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>I-04</td>
+<td>SSE 클라이언트</td>
+<td>스트림 파싱·최종 결과 추출</td>
+<td>언어·프레임워크별 구현</td>
+<td>표준</td>
+</tr>
+<tr>
+<td>I-05</td>
+<td>파일 API</td>
+<td>로컬/SFTP/MinIO</td>
+<td>첨부·결과 파일 연동</td>
+<td>옵션</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="j.-비기능운영">11. J. 비기능·운영</h2>
+<h3 id="표준-pm2-앱-구성-12개">11.1 표준 PM2 앱 구성 (12개)</h3>
+<table>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th>앱 이름</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>admin</code>, <code>admin-api</code></td>
+<td>관리 UI·API</td>
+</tr>
+<tr>
+<td><code>editor</code>, <code>editor-api</code></td>
+<td>시나리오 에디터·메타 API</td>
+</tr>
+<tr>
+<td><code>flow_api</code></td>
+<td>FastAPI 실행 API</td>
+</tr>
+<tr>
+<td><code>clean_up</code></td>
+<td>Redis SSE 키 정리</td>
+</tr>
+<tr>
+<td><code>llm_worker</code>, <code>rag_worker</code>,
+<code>websearch_worker</code>, <code>mcp_agent_worker</code>,
+<code>default_worker</code></td>
+<td>Celery 워커</td>
+</tr>
+<tr>
+<td><code>dc-log</code></td>
+<td>통합 로그</td>
+</tr>
+</tbody>
+</table>
+<h3 id="인프라-의존성">11.2 인프라 의존성</h3>
+<table>
+<thead>
+<tr>
+<th>구성요소</th>
+<th>용도</th>
+<th>PoC 검토 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nginx</td>
+<td>게이트웨이·auth_request</td>
+<td>SSL·도메인·포트</td>
+</tr>
+<tr>
+<td>MySQL 또는 PostgreSQL</td>
+<td>ui/navi/log 스키마</td>
+<td>PoC DB 버전(PG 전환 중)</td>
+</tr>
+<tr>
+<td>Redis</td>
+<td>Celery broker·SSE 이벤트</td>
+<td>고가용성 요구</td>
+</tr>
+<tr>
+<td>LLM API</td>
+<td>외부 또는 Ollama(온프rem)</td>
+<td>망·키·비용</td>
+</tr>
+<tr>
+<td>MCP SSE Server</td>
+<td>DB·도구 연동</td>
+<td>자체 구축 vs 벤더</td>
+</tr>
+<tr>
+<td>Chroma (로컬)</td>
+<td>flow RAG 노드</td>
+<td>디스크·백업</td>
+</tr>
+</tbody>
+</table>
+<h3 id="로드맵-참고">11.3 로드맵 (참고)</h3>
+<table>
+<thead>
+<tr>
+<th>우선순위</th>
+<th>항목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>MySQL → PostgreSQL 18 전환</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>인증/인가 체계 고도화</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>감사·추적·관측 로그 체계</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>실행 DB / 감사 DB 분리</td>
+</tr>
+</tbody>
+</table>
+<h3 id="알려진-제한리스크">11.4 알려진 제한·리스크</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>영역</th>
+<th>설명</th>
+<th>PoC 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TD-01</td>
+<td>dc-flow</td>
+<td>mcp vs mcp_agent — Celery import 이슈</td>
+<td>mcp 노드 불안정 가능</td>
+</tr>
+<tr>
+<td>TD-02</td>
+<td>dc-flow</td>
+<td>MCPHandler import명 불일치</td>
+<td>mcp 노드 오류 가능</td>
+</tr>
+<tr>
+<td>TD-03</td>
+<td>dc-flow</td>
+<td>대규모 시나리오 API 스레드 부하</td>
+<td>동시 실행·규모 제한</td>
+</tr>
+<tr>
+<td>TD-04</td>
+<td>RAG</td>
+<td>rag-api vs flow 별도 벡터 스택</td>
+<td>데이터 불일치</td>
+</tr>
+<tr>
+<td>TD-05</td>
+<td>install</td>
+<td>dc-rag-* 표준 설치 보류</td>
+<td>RAG Builder 미포함</td>
+</tr>
+<tr>
+<td>TD-08</td>
+<td>데이터</td>
+<td>scenarios 테이블 이중 접근</td>
+<td>배포 정책 명확화</td>
+</tr>
+<tr>
+<td>TD-09</td>
+<td>SSE</td>
+<td>클라이언트 단절 시 Redis 잔류</td>
+<td>clean_up으로 완화</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="poc-적합성-체크리스트">12. PoC 적합성 체크리스트</h2>
+<p>PoC 검토 시 아래 항목에 대해 <strong>가능(Yes) / 불가(No) /
+조건부(Conditional)</strong> 를 기록합니다.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>검토 항목</th>
+<th>판단</th>
+<th>조건·비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>온프레미스(고객 인프라) 배포</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>B2B API 연동 (4단계 패턴)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>SSE 실시간 결과 수신</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>RBAC·시나리오 권한 분리</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>감사 로그(audit) 수집·조회</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>MCP 기반 DB/도구 직접 연동</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>LLM 다중 프로바이더</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>RAG 노드(Chroma, flow 내)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>RAG Builder(문서 파이프라인)</td>
+<td></td>
+<td>표준 보류 — 별도 범위</td>
+</tr>
+<tr>
+<td>10</td>
+<td>웹검색 노드</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>서브시나리오·복합 워크플로</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>beta/prod 시나리오 분리 배포</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>IP 화이트리스트 데모 환경</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>폐쇄망·프록시 환경</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>PostgreSQL 단일 DB(deepcube)</td>
+<td></td>
+<td>전환 진행 중</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="선행-조건의존성">13. 선행 조건·의존성</h2>
+<h3 id="poc-착수-전-준비">13.1 PoC 착수 전 준비</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>항목</th>
+<th>담당</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>과제</td>
+<td>PoC 목표·성공 기준·기간</td>
+<td>교보DTS·딥큐브</td>
+</tr>
+<tr>
+<td>시나리오</td>
+<td>검증할 업무 시나리오 1~3건</td>
+<td>교보DTS·관계사</td>
+</tr>
+<tr>
+<td>인프라</td>
+<td>서버·DB·Redis·Nginx</td>
+<td>협의</td>
+</tr>
+<tr>
+<td>LLM</td>
+<td>API 키·모델·망 정책</td>
+<td>관계사·딥큐브</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>대상 DB·MCP 서버</td>
+<td>관계사·딥큐브</td>
+</tr>
+<tr>
+<td>연동</td>
+<td>API Key·테스트 클라이언트</td>
+<td>딥큐브 발급</td>
+</tr>
+<tr>
+<td>보안</td>
+<td>IP·VPN·비밀유지</td>
+<td>양사</td>
+</tr>
+<tr>
+<td>감사</td>
+<td>audit 이벤트 범위·보관</td>
+<td>관계사 요구</td>
+</tr>
+</tbody>
+</table>
+<h3 id="기술-선행-조건">13.2 기술 선행 조건</h3>
+<ul>
+<li>Python 3.12 (dc-flow, dc-log venv)</li>
+<li>Node.js 20/24 (dc-admin, dc-editor)</li>
+<li>MySQL 또는 PostgreSQL 18, Redis</li>
+<li>외부 LLM API 접근 또는 Ollama 등 자체 호스팅</li>
+<li>(MCP PoC 시) MCP SSE 서버 및 대상 시스템 연결 정보</li>
+<li>(RAG PoC 시) 벡터 DB·문서 소스·인덱싱 범위</li>
+</ul>
+<hr />
+<h2 id="데모체험-환경">14. 데모·체험 환경</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>접근 제어</td>
+<td>IP 화이트리스트 — 체험 전 공인 IP 등록 필수</td>
+</tr>
+<tr>
+<td>접속 URL</td>
+<td><code>https://&lt;demo-host&gt;/</code> (실제 값은 담당자 안내)</td>
+</tr>
+<tr>
+<td>브라우저</td>
+<td>Chrome 최신 권장</td>
+</tr>
+<tr>
+<td>계정</td>
+<td>demo 담당자 발급</td>
+</tr>
+<tr>
+<td>가능 기능</td>
+<td>시나리오 실행·편집·생성·삭제, 카테고리·즐겨찾기·공유</td>
+</tr>
+<tr>
+<td>VPN 주의</td>
+<td>VPN·회사망 사용 시 IP 변경 가능 — 실제 접속망 기준 등록</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="nginx-라우팅-참조">15. Nginx 라우팅 참조</h2>
+<table>
+<thead>
+<tr>
+<th>공개 경로</th>
+<th>업스트림</th>
+<th>인증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ui/</code></td>
+<td>dc-admin frontend</td>
+<td>일반</td>
+</tr>
+<tr>
+<td><code>/ui-api/</code></td>
+<td>dc-admin backend</td>
+<td>JWT / API Key</td>
+</tr>
+<tr>
+<td><code>/director/</code></td>
+<td>dc-editor</td>
+<td>Basic Auth (옵션)</td>
+</tr>
+<tr>
+<td><code>/director-api/</code></td>
+<td>dc-editor-api</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/flow/</code></td>
+<td>dc-flow</td>
+<td>auth_request</td>
+</tr>
+<tr>
+<td><code>/log-admin/</code></td>
+<td>dc-log UI</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/log-api/</code></td>
+<td>dc-log API</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/rag/</code>, <code>/rag-manager/</code></td>
+<td>dc-rag-*</td>
+<td>auth_request (<strong>보류</strong>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="부록.-데이터베이스-스키마-요약">부록. 데이터베이스 스키마
+요약</h2>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 25%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th>스키마/DB</th>
+<th>소비자</th>
+<th>주요 데이터</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ui</code></td>
+<td>dc-admin</td>
+<td>users, auths, permissions, grants</td>
+</tr>
+<tr>
+<td><code>navi</code></td>
+<td>dc-flow, dc-editor-api, dc-admin</td>
+<td>scenarios, llm_models, rag_info, MCP, node_execution_log</td>
+</tr>
+<tr>
+<td><code>log</code></td>
+<td>dc-log only</td>
+<td>audit 로그 (app_log 전용)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>본 문서는 DeepCube-AI 기술 문서(DEV_README, dc-log Requirements,
+authentication.md, partner OpenAPI 등)를 근거로 작성되었습니다. 실제 PoC
+범위·일정·환경은 교보디티에스(주)와 (주)딥큐브 간 별도 협의로
+확정합니다.</em></p>
+</body>
+</html>

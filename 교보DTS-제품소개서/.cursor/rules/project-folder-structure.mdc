@@ -1,0 +1,28 @@
+---
+description: 프로젝트 폴더 구조 및 산출물 저장 규칙
+alwaysApply: true
+---
+
+# 프로젝트 폴더 구조
+
+이 프로젝트는 아래 폴더 규칙을 반드시 준수한다.
+
+| 폴더 | 용도 |
+|------|------|
+| `instruction/` | 사용자 지시 내용 (md 파일) |
+| `reference/` | 문서 생성 시 참조할 원본 자료 |
+| `output-md/` | 지시에 따라 생성한 md 파일 |
+| `output-html/` | md → pdf 변환 시 중간 html 파일 |
+| `output-pdf/` | 최종 pdf 결과물 |
+
+## 작업 흐름
+
+1. `instruction/` 의 지시 md를 읽는다.
+2. `reference/` 자료를 참조하여 문서를 작성한다.
+3. 생성 md는 `output-md/`에 저장한다.
+4. pdf 변환 시 html은 `output-html/`, pdf는 `output-pdf/`에 저장한다.
+
+## 금지 사항
+
+- 산출물을 잘못된 폴더에 저장하지 않는다 (예: pdf를 `output-md/`에 두지 않음).
+- `reference/` 자료를 수정하지 않는다.

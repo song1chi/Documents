@@ -1,0 +1,474 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>header#title-block-header {
+  display: none;
+}
+
+@page {
+  margin: 20mm 18mm 22mm 18mm;
+}
+
+body {
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans CJK KR", sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 22pt;
+  border-bottom: 2px solid #2c5282;
+  padding-bottom: 0.3em;
+  margin-top: 0;
+  page-break-before: always;
+}
+
+h1:first-of-type {
+  page-break-before: avoid;
+}
+
+h2 {
+  font-size: 14pt;
+  color: #2c5282;
+  margin-top: 1.4em;
+  border-bottom: 1px solid #cbd5e0;
+  padding-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 12pt;
+  color: #2d3748;
+  margin-top: 1.1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 1em 0;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e0;
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #edf2f7;
+  font-weight: 600;
+}
+
+code, pre {
+  font-family: "SF Mono", "Menlo", monospace;
+  font-size: 9pt;
+  background: #f7fafc;
+}
+
+pre {
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+blockquote {
+  border-left: 4px solid #2c5282;
+  margin-left: 0;
+  padding-left: 1em;
+  color: #4a5568;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 1.5em 0;
+}
+
+.page-break {
+  page-break-after: always;
+}
+/*# sourceURL=pdf-style.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/Users/james/Projects/Documents/교보DTS-제품소개서/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="markdown-body">
+		<h1 id="자연어-db-질의-poc-검토를-위한-deepcubeai-핵심기능-소개-및-준비사항">자연어 DB 질의 PoC 검토를 위한 DeepCube.AI 핵심기능 소개 및 준비사항</h1>
+<h2 id="목차">목차</h2>
+<ol>
+<li><a href="#1-%EA%B0%9C%EC%9A%94">개요</a></li>
+<li><a href="#2-poc-%ED%95%B5%EC%8B%AC-%EA%B8%B0%EB%8A%A5">PoC 핵심 기능</a></li>
+<li><a href="#3-%EA%B3%A0%EA%B0%9D-%EC%A4%80%EB%B9%84%EC%82%AC%ED%95%AD">고객 준비사항</a></li>
+</ol>
+<hr>
+<h2 id="1-개요">1. 개요</h2>
+<h3 id="11-문서-목적">1.1 문서 목적</h3>
+<p>본 문서는 <strong>DeepCube.AI 기반 자연어 DB 질의 PoC</strong>를 검토할 수 있도록, PoC에서 다룰 핵심 기능과 고객 측 준비사항을 정리한 자료입니다.</p>
+<h3 id="12-deepcubeai-개요">1.2 DeepCube.AI 개요</h3>
+<p><strong>DeepCube.AI</strong>는 AI 업무 시나리오를 시각적으로 설계·배포·실행·연동하는 엔터프라이즈 AI 플랫폼입니다. 폐쇄망·로컬 LLM 환경에서 <strong>기존 RDB에 대한 실시간 조회</strong>를 시나리오에서 처리할 수 있습니다.</p>
+<p>본 PoC는 <strong>자연어로 RDB를 조회하는 기능</strong> 검증에 집중합니다.</p>
+<h3 id="13-poc-검증-대상-및-진행-순서">1.3 PoC 검증 대상 및 진행 순서</h3>
+<p>PoC는 DeepCube.AI의 업무 적합성을 검증하기 위한 것으로, 다음 기능을 단계적으로 확인합니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>검증 내용</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>시나리오 관리</td>
+<td>시나리오 작성, 편집, 배포, 실행</td>
+<td>PoC 기반 기능</td>
+</tr>
+<tr>
+<td>자연어 RDB 조회</td>
+<td>자연어 질의를 통한 DB 조회 시나리오 작성·편집·실행</td>
+<td><strong>핵심 기능</strong></td>
+</tr>
+</tbody></table>
+<p>권장 PoC 순서는 **시나리오 관리 → 자연어 DB 조회입니다. 선행 단계에서 플랫폼 기본 동작을 확인한 뒤, 핵심 기능인 자연어 DB 조회를 검증하는 것이 효율적입니다.</p>
+<p>자연어 DB 질의의 품질은 고객 DB의 스키마·업무 용어·데이터 특성에 크게 좌우됩니다. 따라서 PoC 과정에서 <strong>DB Agent (노드)</strong> 를 고객 환경에 맞게 커스터마이징(hint·스키마 설명 등)하는 작업이 필요합니다.</p>
+<hr>
+<div class="page-break"></div>
+
+<h2 id="2-poc-검증-기능">2. PoC 검증 기능</h2>
+<h3 id="21-시나리오워크플로우-관리">2.1 시나리오(워크플로우) 관리</h3>
+<p>시나리오 관리는 AI 워크플로를 조직·업무 단위로 분류하고, 설계·배포·실행까지 일원화하는 기능입니다. PoC에서는 아래 핵심 흐름을 검증합니다.</p>
+<h4 id="211-시나리오-생성">2.1.1 시나리오 생성</h4>
+<p>노드·엣지 기반 비주얼 에디터로 AI 워크플로를 구성합니다. 드래그 앤 드롭으로 노드를 배치·연결하여 LLM, DB Agent (노드) 등을 조합할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>기능명</th>
+<th>PoC에서의 의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>시각적 캔버스</td>
+<td>코드 없이 AI 프로세스 설계</td>
+</tr>
+<tr>
+<td>ㅊ</td>
+<td>노드 풀</td>
+</tr>
+</tbody></table>
+<h4 id="212-시나리오-편집">2.1.2 시나리오 편집</h4>
+<p>테스트(beta)와 운영(prod) 환경을 분리하여 안전하게 배포합니다.</p>
+<table>
+<thead>
+<tr>
+<th>기능명</th>
+<th>PoC에서의 의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>시나리오 편집 진입</td>
+<td>관리 화면에서 에디터로 이동·편집</td>
+</tr>
+<tr>
+<td>시나리오 편집 중 실행</td>
+<td>에디터 편집 화면에서 실행</td>
+</tr>
+</tbody></table>
+<h4 id="213-시나리오-실행">2.1.3 시나리오 실행</h4>
+<p>관리 UI에서 시나리오를 실행하고 결과를 확인합니다.</p>
+<table>
+<thead>
+<tr>
+<th>기능명</th>
+<th>PoC에서의 의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>시나리오 실행(UI)</td>
+<td>프롬프트 입력 후 결과 표시</td>
+</tr>
+<tr>
+<td>SSE 결과 스트리밍</td>
+<td>실행 진행 상황·결과 실시간 수신</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="22-자연어로-rdb-조회">2.2 자연어로 RDB 조회</h3>
+<p>자연어 RDB 조회는 본 PoC의 <strong>핵심 검증 기능</strong>입니다. 사용자의 자연어 질문을 LLM과 DB Agent (노드)가 해석하여, MCP DB Server를 통해 실제 DB에서 데이터를 조회·응답합니다.</p>
+<div class="page-break"></div>
+
+<h4 id="221-아키텍처">2.2.1 아키텍처</h4>
+<pre><code>[사용자 질의]
+     │
+     ▼
+[시나리오 실행 엔진]
+     │
+     ├── DB Agent (노드)  ──►  LLM (자연어 이해·SQL 생성)
+     │         │
+     │         ▼
+     │    MCP DB Server (DB 연동·쿼리 실행)
+     │         │
+     │         ▼
+     └──►  DB 서버 (고객 RDB)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>구성 요소</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>DB Agent (노드)</strong></td>
+<td>자연어 질의를 해석하고 DB 조회 워크플로를 수행하는 AI 에이전트 노드</td>
+</tr>
+<tr>
+<td><strong>LLM</strong></td>
+<td>질의 이해, SQL·도구 호출 계획 수립</td>
+</tr>
+<tr>
+<td><strong>MCP DB Server</strong></td>
+<td>MCP 프로토콜로 DB에 연결·쿼리 실행 (연동 담당)</td>
+</tr>
+<tr>
+<td><strong>DB 서버</strong></td>
+<td>고객 업무 데이터가 저장된 RDB</td>
+</tr>
+</tbody></table>
+<h4 id="222-관련-세부-기능">2.2.2 관련 세부 기능</h4>
+<table>
+<thead>
+<tr>
+<th>기능명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MCP 서버 등록</td>
+<td>MCP DB Server URL·메타데이터 등록</td>
+</tr>
+<tr>
+<td>MCP 에이전트 노드</td>
+<td>워크플로 내 DB Agent (노드) 실행, DB 조회·도구 호출</td>
+</tr>
+<tr>
+<td>MCP 에이전트 목록</td>
+<td>에디터에서 등록된 MCP 에이전트·도구 확인</td>
+</tr>
+<tr>
+<td>LLM 모델 등록</td>
+<td>PoC에 사용할 LLM 연결 설정</td>
+</tr>
+<tr>
+<td>다중 프로바이더</td>
+<td>외부·로컬 LLM 등 프로바이더 선택</td>
+</tr>
+</tbody></table>
+<h4 id="223-db-agent-노드-커스터마이징">2.2.3 DB Agent (노드) 커스터마이징</h4>
+<p>자연어 → SQL 변환 품질을 높이려면 고객 DB 특성에 맞는 정보를 DB Agent (노드)에 제공해야 합니다.</p>
+<ul>
+<li><strong>스키마·테이블 설명</strong>: 테이블·컬럼의 업무적 의미</li>
+<li><strong>Hint</strong>: 자주 쓰는 조인 경로, 코드값 매핑, 업무 규칙</li>
+<li><strong>예시 질의</strong>: 대표적인 자연어 질문과 기대 SQL 패턴</li>
+</ul>
+<p>커스터마이징은 PoC 기간 중 반복적으로 조정하며, 고객이 제공하는 <strong>자연어 질의 예문</strong>(3.4절)과 함께 품질을 개선합니다.</p>
+<h4 id="224-poc-검증-포인트">2.2.4 PoC 검증 포인트</h4>
+<p>다음을 하나의 시나리오로 구성하여 end-to-end로 확인합니다.</p>
+<ol>
+<li>DB Agent (노드)와 LLM 노드를 포함한 시나리오 <strong>작성·편집</strong></li>
+<li>자연어 질의 입력 시 <strong>DB 조회 결과가 응답</strong>으로 반환되는지 <strong>실행</strong> 검증</li>
+</ol>
+<hr>
+<h2 id="3-고객-준비사항">3. 고객 준비사항</h2>
+<p>PoC 수행을 위해 아래 항목을 준비해 주시기 바랍니다.</p>
+<h3 id="31-llm">3.1 LLM</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>권장 구성</td>
+<td><strong>local LLM</strong></td>
+</tr>
+<tr>
+<td>대안</td>
+<td>public LLM 사용</td>
+</tr>
+</tbody></table>
+<p>로컬 LLM 사용 시 데이터가 외부로 전송되지 않아 보안 요건에 유리합니다. PoC 전에 사용할 <strong>모델명·API 엔드포인트</strong>를 확정해 주세요.</p>
+<h3 id="32-deepcubeai-실행-서버">3.2 DeepCube.AI 실행 서버</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>수량</td>
+<td>1대</td>
+</tr>
+<tr>
+<td>OS</td>
+<td><strong>Ubuntu 24.04 LTS</strong> 또는 <strong>RHEL 10.x</strong></td>
+</tr>
+<tr>
+<td>네트워크</td>
+<td>LLM 서버, MCP DB Server, (필요 시) DB 서버와 통신 가능한 방화벽·포트 개방</td>
+</tr>
+</tbody></table>
+<p>서버 사양(CPU·메모리·디스크)은 동시 사용자 수·LLM 규모에 따라 협의합니다.</p>
+<h3 id="33-db-서버">3.3 DB 서버</h3>
+<p>운영에 영향을 주지 않도록 다음과 같은 PoC용 별도 DB 서버가 필요합니다.</p>
+<ul>
+<li>DeepCube.AI(MCP DB Server)에서 DB에 <strong>네트워크 접속</strong> 가능할 것</li>
+<li>접속 계정은 PoC 대상 schema에 대해 <strong>조회(SELECT) 권한만</strong> 부여</li>
+<li>스키마·ERD·데이터 사전 등 DB Agent (노드) 커스터마이징에 활용할 <strong>메타정보</strong> 제공</li>
+</ul>
+<div class="page-break"></div>
+
+<h3 id="34-자연어-질의-예문">3.4 자연어 질의 예문</h3>
+<p>고객 DB를 대상으로 실제 업무에서 사용할 <strong>자연어 질의 예문</strong>을 제공해 주세요.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>안내</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>수량</td>
+<td><strong>많을수록 좋음</strong> (PoC 품질 검증·DB Agent 튜닝에 직접 활용)</td>
+</tr>
+<tr>
+<td>형식</td>
+<td>자연어 질문 + (가능하면) 기대 결과 또는 참고 SQL</td>
+</tr>
+<tr>
+<td>예시</td>
+<td>“지난달 온라인몰 베스트셀러 TOP 10은?”, “현재 재고가 100권 미만인 도서 목록”</td>
+</tr>
+</tbody></table>
+<p>예문은 PoC 성공 여부 판단과 DB Agent (노드) hint 작성의 기초 자료로 사용됩니다. </p>
+<hr>
+<p>(끝)</p>
+
+	
+
+</body></html>
